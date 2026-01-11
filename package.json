@@ -1,0 +1,22 @@
+{
+  "name": "kopihub",
+  "version": "1.0.0",
+  "description": "Platform e-commerce untuk marketplace biji kopi Indonesia",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "dev": "live-server --port=3000",
+    "build": "echo 'No build step required for static HTML'"
+  },
+  "keywords": ["kopi", "e-commerce", "marketplace", "indonesia"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/kopihub.git"
+  },
+  "homepage": "https://yourusername.github.io/kopihub"
+}

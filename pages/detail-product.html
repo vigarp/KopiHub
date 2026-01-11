@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Detail Produk</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA',
+            olive: '#6b7b4d'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream min-h-screen pb-24">
+
+  <!-- Header -->
+  <header class="text-center py-4">
+    <h1 class="text-2xl font-bold text-coffee">KopiHub</h1>
+  </header>
+
+  <!-- Product Image -->
+  <div class="px-4">
+    <img
+      src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+      class="rounded-xl shadow w-full h-56 object-cover"
+      alt="Arabica Gayo"
+    />
+  </div>
+
+  <!-- Product Info -->
+  <section class="px-4 mt-4 space-y-4">
+
+    <!-- Title -->
+    <div>
+      <h2 class="text-xl font-bold text-coffee">Arabica Gayo</h2>
+      <p class="text-sm text-gray-600">Aceh</p>
+      <p class="text-sm text-gray-600 flex items-center gap-1">
+        👤 Koperasi Petani Gayo
+      </p>
+    </div>
+
+    <!-- Rating & Qty -->
+    <div class="flex items-center justify-between">
+      <div class="text-yellow-400 text-sm">
+        ★★★★★ <span class="text-gray-500">(4.8 ulasan)</span>
+      </div>
+
+      <!-- Quantity -->
+      <div class="flex items-center border rounded-lg overflow-hidden">
+        <button onclick="changeQty(-1)" class="px-3 py-1 text-lg">−</button>
+        <span id="qty" class="px-4">1</span>
+        <button onclick="changeQty(1)" class="px-3 py-1 text-lg">+</button>
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="flex items-center justify-between">
+      <p class="text-lg font-semibold text-coffee">
+        Rp 120.000 <span class="text-sm font-normal">/ kg</span>
+      </p>
+      <button
+        onclick="window.location.href='order.html'"
+        class="bg-coffee text-white px-6 py-2 rounded-lg font-semibold hover:bg-coffeeDark transition"
+      >
+        Pesan Sekarang
+      </button>
+    </div>
+
+    <!-- Detail Produk -->
+    <div class="bg-white rounded-xl shadow p-4 space-y-3">
+      <h3 class="font-semibold text-coffee">Detail Produk</h3>
+
+      <div>
+        <p class="font-medium text-gray-700">Deskripsi</p>
+        <p class="text-sm text-gray-600 mt-1">
+          Arabica Gayo berasal dari dataran tinggi Gayo di Aceh, terkenal
+          dengan cita rasa yang kompleks dengan aroma coklat, fruity,
+          dan sedikit floral.
+        </p>
+      </div>
+
+      <div class="space-y-2 mt-2 text-sm">
+        <div class="flex items-center gap-2">
+          <span class="text-olive">📍</span>
+          <span class="font-medium">Origin</span>
+          <span class="ml-auto">Aceh (Gayo Highlands)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-olive">⛰</span>
+          <span class="font-medium">Ketinggian</span>
+          <span class="ml-auto">1.200 – 1.500 meter</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-olive">⚙</span>
+          <span class="font-medium">Proses</span>
+          <span class="ml-auto">Full Washed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seller -->
+    <div class="bg-white rounded-xl shadow p-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-cream rounded-full flex items-center justify-center">
+          🏡
+        </div>
+        <div>
+          <p class="font-semibold text-coffee">
+            Koperasi Petani Gayo
+          </p>
+          <p class="text-xs text-gray-500">Aceh, Indonesia</p>
+        </div>
+      </div>
+      <button class="border px-4 py-1.5 rounded-lg text-sm">
+        Lihat Profil
+      </button>
+    </div>
+
+  </section>
+
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+    <div class="flex justify-around py-2 text-sm text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='../index.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

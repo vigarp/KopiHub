@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Wishlist</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream min-h-screen pb-24">
+
+  <!-- Header -->
+  <header class="text-center py-6">
+    <h1 class="text-2xl font-bold text-coffee">KopiHub</h1>
+    <p class="text-lg font-semibold mt-2 text-coffee">
+      Wishlist
+    </p>
+    <p class="text-sm text-gray-600">
+      Produk favorit yang Anda simpan
+    </p>
+  </header>
+
+  <!-- Wishlist Content -->
+  <section class="px-4 space-y-4">
+
+    <!-- Item -->
+    <div class="bg-white rounded-xl shadow flex overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+        class="w-28 h-28 object-cover"
+      />
+      <div class="p-3 flex-1">
+        <h3 class="font-semibold text-coffee">Arabica Gayo</h3>
+        <p class="text-sm text-gray-500">Aceh</p>
+        <p class="text-sm text-gray-500">👤 Koperasi Petani Gayo</p>
+
+        <div class="flex items-center justify-between mt-2">
+          <p class="font-semibold text-coffee">
+            Rp 120.000 <span class="text-sm font-normal">/ kg</span>
+          </p>
+          <button
+            onclick="removeItem(this)"
+            class="text-red-500 text-sm"
+          >
+            Hapus
+          </button>
+        </div>
+
+        <button
+          onclick="window.location.href='order.html'"
+          class="mt-2 w-full bg-coffee text-white py-1.5 rounded-lg text-sm hover:bg-coffeeDark transition"
+        >
+          Pesan Sekarang
+        </button>
+      </div>
+    </div>
+
+    <!-- Item -->
+    <div class="bg-white rounded-xl shadow flex overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5"
+        class="w-28 h-28 object-cover"
+      />
+      <div class="p-3 flex-1">
+        <h3 class="font-semibold text-coffee">Arabica Toraja</h3>
+        <p class="text-sm text-gray-500">Sulawesi Selatan</p>
+        <p class="text-sm text-gray-500">👤 Kelompok Tani Toraja</p>
+
+        <div class="flex items-center justify-between mt-2">
+          <p class="font-semibold text-coffee">
+            Rp 125.000 <span class="text-sm font-normal">/ kg</span>
+          </p>
+          <button
+            onclick="removeItem(this)"
+            class="text-red-500 text-sm"
+          >
+            Hapus
+          </button>
+        </div>
+
+        <button
+          onclick="window.location.href='order.html'"
+          class="mt-2 w-full bg-coffee text-white py-1.5 rounded-lg text-sm hover:bg-coffeeDark transition"
+        >
+          Pesan Sekarang
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty State (optional, hidden by default) -->
+    <div id="emptyState" class="hidden text-center text-gray-500 mt-10">
+      Wishlist Anda masih kosong
+    </div>
+
+  </section>
+
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+    <div class="flex justify-around py-2 text-sm text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='../index.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center text-coffee font-semibold">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

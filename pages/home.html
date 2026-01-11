@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Home</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream min-h-screen pb-20">
+
+  <!-- Header -->
+  <header class="text-center pt-6 pb-4">
+    <h1 class="text-2xl font-bold text-coffee">KopiHub</h1>
+    <p class="text-sm text-gray-600 mt-1">
+      Halo, selamat datang di KopiHub!
+    </p>
+  </header>
+
+  <!-- Search -->
+  <div class="px-4 mb-4">
+    <div class="flex items-center bg-white rounded-xl shadow px-4 py-2">
+      <span class="text-gray-400 mr-2">🔍</span>
+      <input
+        type="text"
+        placeholder="Cari biji kopi, origin, atau petani"
+        class="w-full focus:outline-none text-sm"
+      />
+    </div>
+  </div>
+
+  <!-- Category -->
+  <div class="px-4 mb-4 overflow-x-auto">
+    <div class="flex gap-2 w-max">
+      <button class="px-4 py-1.5 rounded-full bg-coffee text-white text-sm">
+        Arabica
+      </button>
+      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+        Robusta
+      </button>
+      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+        Specialty
+      </button>
+      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+        Single Origin
+      </button>
+      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+        Pre-order Panen
+      </button>
+    </div>
+  </div>
+
+  <!-- Product List -->
+  <section class="px-4">
+    <h2 class="text-lg font-semibold text-coffee mb-3">
+      Daftar Biji Kopi
+    </h2>
+
+    <!-- Card -->
+    <div class="space-y-4">
+
+      <!-- Product Item -->
+      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+        <img
+          src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13"
+          class="w-28 h-28 object-cover"
+        />
+        <div class="p-3 flex-1">
+          <h3 class="font-semibold text-coffee">Arabica Gayo</h3>
+          <p class="text-sm text-gray-500">Aceh</p>
+          <p class="text-sm text-gray-500 flex items-center gap-1">
+            👤 Koperasi Petani Gayo
+          </p>
+          <div class="flex items-center justify-between mt-2">
+            <p class="font-semibold text-coffee">
+              Rp 120.000 <span class="text-sm font-normal">/ kg</span>
+            </p>
+            <span class="text-yellow-400 text-sm">
+              ★★★★★ <span class="text-gray-500">(320)</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Item -->
+      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+        <img
+          src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5"
+          class="w-28 h-28 object-cover"
+        />
+        <div class="p-3 flex-1">
+          <h3 class="font-semibold text-coffee">Arabica Kintamani</h3>
+          <p class="text-sm text-gray-500">Bali</p>
+          <p class="text-sm text-gray-500">👤 HGU Kintamani</p>
+          <div class="flex items-center justify-between mt-2">
+            <p class="font-semibold text-coffee">
+              Rp 130.000 <span class="text-sm font-normal">/ kg</span>
+            </p>
+            <span class="text-yellow-400 text-sm">
+              ★★★★☆ <span class="text-gray-500">(285)</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Item -->
+      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+        <img
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+          class="w-28 h-28 object-cover"
+        />
+        <div class="p-3 flex-1">
+          <h3 class="font-semibold text-coffee">Robusta Temanggung</h3>
+          <p class="text-sm text-gray-500">Temanggung</p>
+          <p class="text-sm text-gray-500">👤 Petani Temanggung</p>
+          <div class="flex items-center justify-between mt-2">
+            <p class="font-semibold text-coffee">
+              Rp 95.000 <span class="text-sm font-normal">/ kg</span>
+            </p>
+            <span class="text-yellow-400 text-sm">
+              ★★★★☆ <span class="text-gray-500">(210)</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Item -->
+      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+        <img
+          src="https://images.unsplash.com/photo-1528825871115-3581a5387919"
+          class="w-28 h-28 object-cover"
+        />
+        <div class="p-3 flex-1">
+          <h3 class="font-semibold text-coffee">Arabica Toraja</h3>
+          <p class="text-sm text-gray-500">Sulawesi Selatan</p>
+          <p class="text-sm text-gray-500">👤 Kelompok Tani Toraja</p>
+          <div class="flex items-center justify-between mt-2">
+            <p class="font-semibold text-coffee">
+              Rp 125.000 <span class="text-sm font-normal">/ kg</span>
+            </p>
+            <span class="text-yellow-400 text-sm">
+              ★★★★★ <span class="text-gray-500">(250)</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+    <div class="flex justify-around py-2 text-sm text-gray-500">
+      <div class="flex flex-col items-center text-coffee font-semibold">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

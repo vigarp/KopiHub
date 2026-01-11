@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Profile</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream min-h-screen pb-24">
+
+  <!-- Header -->
+  <header class="text-center py-6">
+    <h1 class="text-2xl font-bold text-coffee">KopiHub</h1>
+    <p class="text-lg font-semibold mt-2 text-coffee">
+      Profile
+    </p>
+    <p class="text-sm text-gray-600">
+      Informasi akun Anda
+    </p>
+  </header>
+
+  <section class="px-4 space-y-4">
+
+    <!-- Profile Card -->
+    <div class="bg-white rounded-xl shadow p-4 text-center">
+      <div class="w-20 h-20 mx-auto bg-cream rounded-full flex items-center justify-center text-3xl">
+        👤
+      </div>
+      <h2 class="mt-3 font-semibold text-coffee">
+        Coffee Shop Jakarta
+      </h2>
+      <p class="text-sm text-gray-500">
+        coffeeshop@email.com
+      </p>
+      <span class="inline-block mt-2 px-3 py-1 text-xs rounded-full bg-coffee text-white">
+        Coffee Shop
+      </span>
+    </div>
+
+    <!-- Info -->
+    <div class="bg-white rounded-xl shadow p-4 space-y-2">
+      <h3 class="font-semibold text-coffee mb-2">
+        Informasi Usaha
+      </h3>
+      <div class="text-sm text-gray-600">
+        <p><strong>Nama Usaha:</strong> Coffee Shop Jakarta</p>
+        <p><strong>Alamat:</strong> Jl. Kenangan No. 45, Jakarta Selatan</p>
+        <p><strong>Kontak:</strong> 0812-3456-7890</p>
+      </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="bg-white rounded-xl shadow divide-y text-sm">
+      <button class="w-full px-4 py-3 text-left hover:bg-gray-50">
+        ✏️ Edit Profile
+      </button>
+      <button class="w-full px-4 py-3 text-left hover:bg-gray-50">
+        🔒 Ganti Password
+      </button>
+      <button class="w-full px-4 py-3 text-left hover:bg-gray-50">
+        📄 Kebijakan Privasi
+      </button>
+    </div>
+
+    <!-- Logout -->
+    <button
+      onclick="logout()"
+      class="w-full bg-red-500 text-white py-3 rounded-xl font-semibold hover:bg-red-600 transition"
+    >
+      Logout
+    </button>
+
+  </section>
+
+  <!-- Bottom Navigation -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+    <div class="flex justify-around py-2 text-sm text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='../index.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center text-coffee font-semibold">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

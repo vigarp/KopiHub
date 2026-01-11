@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Pembayaran</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream min-h-screen pb-24">
+
+  <!-- Header -->
+  <header class="text-center py-6">
+    <h1 class="text-2xl font-bold text-coffee">KopiHub</h1>
+    <p class="text-lg font-semibold mt-2 text-coffee">Pembayaran</p>
+    <p class="text-sm text-gray-600">
+      Silakan lanjutkan proses pembayaran Anda
+    </p>
+  </header>
+
+  <section class="px-4 space-y-4">
+
+    <!-- Ringkasan -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <h2 class="font-semibold text-coffee mb-3">
+        Ringkasan Pemesanan
+      </h2>
+
+      <div class="flex gap-3">
+        <img
+          src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+          class="w-20 h-20 rounded-lg object-cover"
+        />
+        <div class="flex-1">
+          <p class="font-semibold text-coffee">
+            Arabica Gayo <span class="text-sm font-normal">(Aceh)</span>
+          </p>
+          <p class="text-sm text-gray-500">👤 Koperasi Petani Gayo</p>
+          <p class="text-sm text-gray-600 mt-1">
+            Rp 120.000 × 2 kg
+          </p>
+        </div>
+      </div>
+
+      <p class="text-right font-semibold text-coffee mt-3">
+        Rp 240.000
+      </p>
+    </div>
+
+    <!-- Instruksi -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <h2 class="font-semibold text-coffee mb-2">
+        Instruksi Pembayaran
+      </h2>
+      <ol class="list-decimal list-inside text-sm text-gray-600 space-y-1">
+        <li>Buka aplikasi m-banking atau e-wallet Anda.</li>
+        <li>Pindai QRIS di atas untuk melakukan pembayaran.</li>
+        <li>Pastikan nominal pembayaran sesuai total.</li>
+      </ol>
+    </div>
+
+    <!-- VA -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <h2 class="font-semibold text-coffee mb-3">
+        Atau Transfer ke Virtual Account
+      </h2>
+      <div class="flex gap-3 justify-between text-sm">
+        <div class="px-3 py-2 border rounded-lg flex-1 text-center">BCA</div>
+        <div class="px-3 py-2 border rounded-lg flex-1 text-center">Mandiri</div>
+        <div class="px-3 py-2 border rounded-lg flex-1 text-center">BNI</div>
+        <div class="px-3 py-2 border rounded-lg flex-1 text-center">BRI</div>
+      </div>
+    </div>
+
+    <!-- Rincian -->
+    <div class="bg-white rounded-xl shadow p-4 space-y-2">
+      <h2 class="font-semibold text-coffee">
+        Rincian Pembayaran
+      </h2>
+
+      <div class="flex justify-between text-sm">
+        <span>Total Pembayaran</span>
+        <span class="font-semibold">Rp 260.000</span>
+      </div>
+
+      <div class="flex justify-between text-sm">
+        <span>No. Invoice</span>
+        <span>INV20240427001</span>
+      </div>
+
+      <div class="flex justify-between font-semibold text-coffee pt-2 border-t">
+        <span>Total Pembayaran</span>
+        <span>Rp 260.000</span>
+      </div>
+    </div>
+
+    <!-- Button -->
+    <button
+      onclick="window.location.href='home.html'"
+      class="w-full bg-coffee text-white py-3 rounded-xl font-semibold hover:bg-coffeeDark transition"
+    >
+      Cek Status Pesanan
+    </button>
+
+  </section>
+
+  <!-- Bottom Nav -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg">
+    <div class="flex justify-around py-2 text-sm text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='../index.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center text-coffee font-semibold">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>
