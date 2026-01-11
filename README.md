@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c3ffa135-e0d0-4b98-9f69-1ee42f85ba79/deploy-status)](https://app.netlify.com/projects/vigarp-kopihub/deploys)
+
 # KopiHub
 
 Platform e-commerce yang menghubungkan petani kopi dengan coffee shop di Indonesia.
