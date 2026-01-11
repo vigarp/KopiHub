@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/kopihub.git"
+    "url": "https://github.com/vigarp/kopihub.git"
   },
-  "homepage": "https://yourusername.github.io/kopihub"
+  "homepage": "https://vigarp-kopihub.netlify.app"
 }
