@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Daftar Akun</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-cream flex items-center justify-center p-4 py-8">
+
+  <!-- Container -->
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden">
+
+    <!-- Header Image -->
+    <div class="relative">
+      <img 
+        src="https://images.unsplash.com/photo-1447933601403-0c6688de566e"
+        alt="Coffee Farm and Beans"
+        class="h-44 w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+        <h1 class="text-2xl font-bold">KopiHub</h1>
+        <p class="text-sm">Bergabung dalam Ekosistem Kopi Indonesia</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="p-6">
+      <h2 class="text-xl font-semibold text-center text-coffee mb-1">
+        Buat Akun Baru
+      </h2>
+      <p class="text-center text-sm text-gray-500 mb-6">
+        Daftar sebagai Petani Kopi atau Pemilik Coffee Shop
+      </p>
+
+      <form id="registerForm" class="space-y-4">
+
+        <!-- Role Selection -->
+        <div>
+          <label class="block text-sm text-gray-600 mb-1 font-medium">Daftar Sebagai</label>
+          <select
+            id="registerRole"
+            required
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee text-sm"
+          >
+            <option value="">Pilih peran Anda</option>
+            <option value="petani">Petani / Kelompok Tani</option>
+            <option value="coffee_shop">Pemilik Coffee Shop</option>
+          </select>
+        </div>
+
+        <!-- Nama Lengkap / Usaha -->
+        <div>
+          <label class="block text-sm text-gray-600 mb-1 font-medium">Nama Lengkap / Nama Bisnis</label>
+          <input 
+            type="text"
+            required
+            placeholder="Contoh: Koperasi Tani Gayo / Kopi Kenangan"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee text-sm"
+          />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-sm text-gray-600 mb-1 font-medium">Email</label>
+          <input 
+            type="email"
+            required
+            placeholder="nama@email.com"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee text-sm"
+          />
+        </div>
+
+        <!-- No Telepon / WA -->
+        <div>
+          <label class="block text-sm text-gray-600 mb-1 font-medium">Nomor WhatsApp</label>
+          <input 
+            type="tel"
+            required
+            placeholder="081234567890"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee text-sm"
+          />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-sm text-gray-600 mb-1 font-medium">Kata Sandi</label>
+          <div class="relative">
+            <input 
+              id="registerPassword"
+              type="password"
+              required
+              placeholder="Minimal 6 karakter"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee text-sm"
+            />
+            <button
+              type="button"
+              onclick="toggleFieldVisibility('registerPassword')"
+              class="absolute right-3 top-2.5 text-gray-500 text-sm"
+            >
+              👁
+            </button>
+          </div>
+        </div>
+
+        <!-- Konfirmasi Password -->
+        <div>
+          <label class="block text-sm text-gray-600 mb-1 font-medium">Konfirmasi Kata Sandi</label>
+          <div class="relative">
+            <input 
+              id="confirmPassword"
+              type="password"
+              required
+              placeholder="Ulangi kata sandi"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee text-sm"
+            />
+            <button
+              type="button"
+              onclick="toggleFieldVisibility('confirmPassword')"
+              class="absolute right-3 top-2.5 text-gray-500 text-sm"
+            >
+              👁
+            </button>
+          </div>
+        </div>
+
+        <!-- Syarat & Ketentuan -->
+        <div class="flex items-start gap-2 pt-1">
+          <input 
+            type="checkbox"
+            id="terms"
+            required
+            class="mt-1 accent-coffee"
+          />
+          <label for="terms" class="text-xs text-gray-600">
+            Saya menyetujui <a href="#" class="text-coffee font-semibold hover:underline">Syarat & Ketentuan</a> serta <a href="#" class="text-coffee font-semibold hover:underline">Kebijakan Privasi</a> KopiHub.
+          </label>
+        </div>
+
+        <!-- Button Submit -->
+        <button
+          type="submit"
+          class="w-full bg-coffee text-white py-2.5 rounded-lg font-semibold hover:bg-coffeeDark transition text-sm mt-2"
+        >
+          Daftar Sekarang
+        </button>
+      </form>
+
+      <!-- Login Link -->
+      <p class="text-center text-sm text-gray-600 mt-5">
+        Sudah memiliki akun?
+        <a href="../index.html" class="text-coffee font-semibold hover:underline">
+          Masuk di sini
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>
+

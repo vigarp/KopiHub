@@ -8,6 +8,14 @@ function togglePassword() {
   }
 }
 
+// Toggle specific input visibility by element id
+function toggleFieldVisibility(id) {
+  const field = document.getElementById(id);
+  if (field) {
+    field.type = field.type === 'password' ? 'text' : 'password';
+  }
+}
+
 // Change quantity (used in detail-product.html)
 let qty = 1;
 function changeQty(val) {
@@ -69,14 +77,42 @@ function logout() {
   window.location.href = '/index.html';
 }
 
-// Login form submit (used in index.html)
+// Form submit listeners
 document.addEventListener('DOMContentLoaded', function() {
+  // Login form (index.html)
   const loginForm = document.getElementById('loginForm');
   if (loginForm) {
     loginForm.addEventListener('submit', function(e) {
       e.preventDefault();
       alert('Login berhasil (simulasi)');
       window.location.href = 'pages/home.html';
+    });
+  }
+
+  // Register form (pages/register.html)
+  const registerForm = document.getElementById('registerForm');
+  if (registerForm) {
+    registerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const pass = document.getElementById('registerPassword')?.value;
+      const confirmPass = document.getElementById('confirmPassword')?.value;
+      if (pass && confirmPass && pass !== confirmPass) {
+        alert('Kata sandi dan konfirmasi kata sandi tidak cocok!');
+        return;
+      }
+      alert('Pendaftaran berhasil (simulasi)! Silakan masuk dengan akun baru Anda.');
+      window.location.href = '../index.html';
+    });
+  }
+
+  // Forgot password form (pages/forgot-password.html)
+  const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+  if (forgotPasswordForm) {
+    forgotPasswordForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('forgotEmail')?.value || 'email Anda';
+      alert('Tautan pemulihan kata sandi telah dikirim ke ' + email + ' (simulasi). Silakan periksa kotak masuk email Anda!');
+      window.location.href = '../index.html';
     });
   }
 });

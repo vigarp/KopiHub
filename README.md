@@ -12,6 +12,8 @@ KopiHub adalah aplikasi web mockup untuk marketplace biji kopi. Petani dapat men
 KopiHub/
 ├── index.html              # Halaman login (entry point)
 ├── pages/                  # Halaman HTML lainnya
+│   ├── register.html       # Halaman registrasi / pendaftaran akun baru
+│   ├── forgot-password.html# Halaman pemulihan / lupa kata sandi
 │   ├── home.html           # Beranda dengan list produk
 │   ├── detail-product.html # Detail produk
 │   ├── order.html          # Halaman pesanan
