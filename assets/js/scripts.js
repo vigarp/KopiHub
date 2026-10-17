@@ -115,4 +115,103 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location.href = '../index.html';
     });
   }
+
+  // Home filter & search handler (pages/home.html)
+  initHomeFilter();
 });
+
+// Category and Search Filtering on home.html
+function initHomeFilter() {
+  const categoryBtns = document.querySelectorAll('.category-btn');
+  const productCards = document.querySelectorAll('.product-card');
+  const searchInput = document.getElementById('searchInput');
+  const productCount = document.getElementById('productCount');
+  const noProducts = document.getElementById('noProducts');
+
+  if (categoryBtns.length === 0 || productCards.length === 0) return;
+
+  // Read URL query parameter: ?category=...
+  const urlParams = new URLSearchParams(window.location.search);
+  let activeCategory = urlParams.get('category')?.toLowerCase() || 'all';
+
+  function applyFilter() {
+    const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    let visibleCount = 0;
+
+    productCards.forEach(card => {
+      const cardCategories = (card.getAttribute('data-category') || '').toLowerCase();
+      const cardName = (card.getAttribute('data-name') || '').toLowerCase();
+      const cardOrigin = (card.getAttribute('data-origin') || '').toLowerCase();
+      const cardFarmer = (card.getAttribute('data-farmer') || '').toLowerCase();
+
+      // Check category match
+      const categoryMatch = (activeCategory === 'all') || cardCategories.includes(activeCategory);
+
+      // Check search keyword match
+      const searchMatch = !searchTerm || 
+        cardName.includes(searchTerm) || 
+        cardOrigin.includes(searchTerm) || 
+        cardFarmer.includes(searchTerm);
+
+      if (categoryMatch && searchMatch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Update count & empty state
+    if (productCount) {
+      productCount.innerText = `${visibleCount} produk`;
+    }
+    if (noProducts) {
+      if (visibleCount === 0) {
+        noProducts.classList.remove('hidden');
+      } else {
+        noProducts.classList.add('hidden');
+      }
+    }
+  }
+
+  // Update button visual styles
+  function updateButtonStyles() {
+    categoryBtns.forEach(btn => {
+      const cat = btn.getAttribute('data-category');
+      if (cat === activeCategory) {
+        btn.classList.add('bg-coffee', 'text-white');
+        btn.classList.remove('bg-white', 'text-gray-700', 'shadow');
+      } else {
+        btn.classList.remove('bg-coffee', 'text-white');
+        btn.classList.add('bg-white', 'text-gray-700', 'shadow');
+      }
+    });
+  }
+
+  // Bind category button clicks
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      activeCategory = this.getAttribute('data-category');
+      updateButtonStyles();
+      applyFilter();
+
+      // Update URL without page reload
+      const newUrl = new URL(window.location);
+      if (activeCategory === 'all') {
+        newUrl.searchParams.delete('category');
+      } else {
+        newUrl.searchParams.set('category', activeCategory);
+      }
+      window.history.replaceState({}, '', newUrl);
+    });
+  });
+
+  // Bind search input
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilter);
+  }
+
+  // Run on initial page load
+  updateButtonStyles();
+  applyFilter();
+}

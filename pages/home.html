@@ -40,6 +40,7 @@
     <div class="flex items-center bg-white rounded-xl shadow px-4 py-2">
       <span class="text-gray-400 mr-2">🔍</span>
       <input
+        id="searchInput"
         type="text"
         placeholder="Cari biji kopi, origin, atau petani"
         class="w-full focus:outline-none text-sm"
@@ -49,20 +50,23 @@
 
   <!-- Category -->
   <div class="px-4 mb-4 overflow-x-auto">
-    <div class="flex gap-2 w-max">
-      <button class="px-4 py-1.5 rounded-full bg-coffee text-white text-sm">
+    <div id="categoryContainer" class="flex gap-2 w-max">
+      <button data-category="all" class="category-btn px-4 py-1.5 rounded-full bg-coffee text-white text-sm transition">
+        Semua
+      </button>
+      <button data-category="arabica" class="category-btn px-4 py-1.5 rounded-full bg-white text-gray-700 shadow text-sm transition">
         Arabica
       </button>
-      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+      <button data-category="robusta" class="category-btn px-4 py-1.5 rounded-full bg-white text-gray-700 shadow text-sm transition">
         Robusta
       </button>
-      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+      <button data-category="specialty" class="category-btn px-4 py-1.5 rounded-full bg-white text-gray-700 shadow text-sm transition">
         Specialty
       </button>
-      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+      <button data-category="single-origin" class="category-btn px-4 py-1.5 rounded-full bg-white text-gray-700 shadow text-sm transition">
         Single Origin
       </button>
-      <button class="px-4 py-1.5 rounded-full bg-white shadow text-sm">
+      <button data-category="pre-order" class="category-btn px-4 py-1.5 rounded-full bg-white text-gray-700 shadow text-sm transition">
         Pre-order Panen
       </button>
     </div>
@@ -70,18 +74,36 @@
 
   <!-- Product List -->
   <section class="px-4">
-    <h2 class="text-lg font-semibold text-coffee mb-3">
-      Daftar Biji Kopi
-    </h2>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-lg font-semibold text-coffee">
+        Daftar Biji Kopi
+      </h2>
+      <span id="productCount" class="text-xs text-gray-500">4 produk</span>
+    </div>
 
-    <!-- Card -->
-    <div class="space-y-4">
+    <!-- Empty State -->
+    <div id="noProducts" class="hidden bg-white rounded-xl shadow p-8 text-center text-gray-500 text-sm">
+      <p class="text-2xl mb-2">☕</p>
+      <p class="font-medium text-gray-700">Tidak ada produk yang cocok</p>
+      <p class="text-xs text-gray-400 mt-1">Coba gunakan kata kunci atau kategori lain</p>
+    </div>
 
-      <!-- Product Item -->
-      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+    <!-- Card Container -->
+    <div id="productList" class="space-y-4">
+
+      <!-- Product Item 1: Arabica Gayo -->
+      <div 
+        class="product-card bg-white rounded-xl shadow flex overflow-hidden cursor-pointer hover:shadow-md transition" 
+        onclick="window.location.href='detail-product.html'"
+        data-category="arabica specialty single-origin"
+        data-name="Arabica Gayo"
+        data-origin="Aceh"
+        data-farmer="Koperasi Petani Gayo"
+      >
         <img
           src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13"
           class="w-28 h-28 object-cover"
+          alt="Arabica Gayo"
         />
         <div class="p-3 flex-1">
           <h3 class="font-semibold text-coffee">Arabica Gayo</h3>
@@ -100,11 +122,19 @@
         </div>
       </div>
 
-      <!-- Product Item -->
-      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+      <!-- Product Item 2: Arabica Kintamani -->
+      <div 
+        class="product-card bg-white rounded-xl shadow flex overflow-hidden cursor-pointer hover:shadow-md transition" 
+        onclick="window.location.href='detail-product.html'"
+        data-category="arabica single-origin"
+        data-name="Arabica Kintamani"
+        data-origin="Bali"
+        data-farmer="HGU Kintamani"
+      >
         <img
           src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5"
           class="w-28 h-28 object-cover"
+          alt="Arabica Kintamani"
         />
         <div class="p-3 flex-1">
           <h3 class="font-semibold text-coffee">Arabica Kintamani</h3>
@@ -121,11 +151,19 @@
         </div>
       </div>
 
-      <!-- Product Item -->
-      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+      <!-- Product Item 3: Robusta Temanggung -->
+      <div 
+        class="product-card bg-white rounded-xl shadow flex overflow-hidden cursor-pointer hover:shadow-md transition" 
+        onclick="window.location.href='detail-product.html'"
+        data-category="robusta single-origin"
+        data-name="Robusta Temanggung"
+        data-origin="Temanggung"
+        data-farmer="Petani Temanggung"
+      >
         <img
           src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
           class="w-28 h-28 object-cover"
+          alt="Robusta Temanggung"
         />
         <div class="p-3 flex-1">
           <h3 class="font-semibold text-coffee">Robusta Temanggung</h3>
@@ -142,11 +180,48 @@
         </div>
       </div>
 
-      <!-- Product Item -->
-      <div class="bg-white rounded-xl shadow flex overflow-hidden cursor-pointer" onclick="window.location.href='detail-product.html'">
+      <!-- Product Item 4: Robusta Dampit Malang -->
+      <div 
+        class="product-card bg-white rounded-xl shadow flex overflow-hidden cursor-pointer hover:shadow-md transition" 
+        onclick="window.location.href='detail-product.html'"
+        data-category="robusta pre-order"
+        data-name="Robusta Dampit"
+        data-origin="Malang, Jawa Timur"
+        data-farmer="Kelompok Tani Dampit"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9"
+          class="w-28 h-28 object-cover"
+          alt="Robusta Dampit"
+        />
+        <div class="p-3 flex-1">
+          <h3 class="font-semibold text-coffee">Robusta Dampit</h3>
+          <p class="text-sm text-gray-500">Malang, Jawa Timur</p>
+          <p class="text-sm text-gray-500">👤 Kelompok Tani Dampit</p>
+          <div class="flex items-center justify-between mt-2">
+            <p class="font-semibold text-coffee">
+              Rp 90.000 <span class="text-sm font-normal">/ kg</span>
+            </p>
+            <span class="text-yellow-400 text-sm">
+              ★★★★★ <span class="text-gray-500">(175)</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Item 5: Arabica Toraja -->
+      <div 
+        class="product-card bg-white rounded-xl shadow flex overflow-hidden cursor-pointer hover:shadow-md transition" 
+        onclick="window.location.href='detail-product.html'"
+        data-category="arabica specialty single-origin pre-order"
+        data-name="Arabica Toraja"
+        data-origin="Sulawesi Selatan"
+        data-farmer="Kelompok Tani Toraja"
+      >
         <img
           src="https://images.unsplash.com/photo-1528825871115-3581a5387919"
           class="w-28 h-28 object-cover"
+          alt="Arabica Toraja"
         />
         <div class="p-3 flex-1">
           <h3 class="font-semibold text-coffee">Arabica Toraja</h3>
