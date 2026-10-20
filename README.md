@@ -14,17 +14,22 @@ KopiHub/
 ├── pages/                  # Halaman HTML lainnya
 │   ├── register.html       # Halaman registrasi / pendaftaran akun baru
 │   ├── forgot-password.html# Halaman pemulihan / lupa kata sandi
-│   ├── home.html           # Beranda dengan list produk
-│   ├── detail-product.html # Detail produk
-│   ├── order.html          # Halaman pesanan
-│   ├── payment.html        # Halaman pembayaran
-│   ├── profile.html        # Profil pengguna
-│   └── wishlist.html       # Wishlist produk
+│   ├── home.html           # Beranda dengan B2B Quick Services & katalog
+│   ├── sample-kit.html     # Layanan B2B Free Sample Kit 100g
+│   ├── subscription.html   # KopiHub Routine (Langganan pasokan berkala hemat 15%)
+│   ├── custom-roast.html   # Custom Roasting & Formulator Signature House Blend
+│   ├── traceability.html   # Lembar Uji Mutu Q-Grader (Cupping Sheet) & Traceability
+│   ├── tracking.html       # Status Kargo Truk & Faktur Komersial B2B (Invoicing)
+│   ├── detail-product.html # Detail produk B2B (Tiered pricing & Green/Roasted beans)
+│   ├── order.html          # Halaman checkout B2B (Kargo & Credit Terms 14 Hari)
+│   ├── payment.html        # Halaman pembayaran & QRIS B2B
+│   ├── profile.html        # Profil usaha kedai kopi & akun
+│   └── wishlist.html       # Wishlist produk favorit
 ├── assets/                 # Aset statis
 │   ├── css/
 │   │   └── styles.css      # CSS custom (jika ada)
 │   ├── js/
-│   │   └── scripts.js      # JavaScript umum
+│   │   └── scripts.js      # JavaScript umum & logika B2B interaktif
 │   └── images/             # Gambar (favicon, dll.)
 ├── README.md               # Dokumentasi ini
 ├── .gitignore              # File yang diabaikan Git
@@ -40,14 +45,14 @@ KopiHub/
    ```
 3. Navigasi antar halaman via link atau bottom navigation.
 
-## Fitur
-- **Login**: Simulasi login sebagai Petani atau Coffee Shop.
-- **Browse Produk**: List biji kopi dengan filter kategori.
-- **Detail Produk**: Informasi lengkap, quantity selector.
-- **Wishlist**: Simpan produk favorit.
-- **Pesanan**: Checkout dengan kalkulasi harga.
-- **Pembayaran**: Simulasi QRIS/VA.
-- **Profil**: Info akun dan logout.
+## Fitur Unggulan B2B (Sesuai Proposal Bisnis KopiHub)
+- **Autentikasi Lengkap**: Login multi-role, Pendaftaran akun bisnis, dan Lupa kata sandi.
+- **Katalog & Filter Dinamis**: Penyaringan Arabica, Robusta, Specialty, Pre-order Panen, serta pencarian real-time.
+- **B2B Free Sample Kit (100g)**: Fasilitas sampel kopi gratis bagi coffee shop & roastery sebelum pemesanan grosir.
+- **KopiHub Routine Subscription**: Jadwal pasokan rutin berkala dengan diskon tetap 15% dan gratis ongkir kargo.
+- **Custom Roasting & House Blend**: Formulator racikan rasio biji (Arabica/Robusta) dan profil sangrai khas kedai.
+- **Quality & Traceability Certificate**: Lembar kurasi SCA Cupping Score resmi oleh Q-Grader, uji kadar air (<12%), dan data asal kebun.
+- **Pelacakan Logistik Kargo & Invoicing**: Tracking resi ekspedisi kargo (SLA 1x24 jam) dan termin pembayaran tempo 14 hari (B2B Credit Terms).
 
 ## Teknologi
 - **Frontend**: HTML5, CSS (Tailwind CSS), JavaScript vanilla.

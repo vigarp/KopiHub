@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Free Sample Kit B2B</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA',
+            olive: '#6b7b4d'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-cream pb-24">
+
+  <!-- Header -->
+  <header class="bg-white border-b sticky top-0 z-30 px-4 py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2">
+      <button onclick="window.location.href='home.html'" class="text-gray-600 text-lg">←</button>
+      <h1 class="font-bold text-coffee text-lg">B2B Free Sample Kit</h1>
+    </div>
+    <span class="text-xs bg-green-100 text-green-700 font-semibold px-2.5 py-1 rounded-full">
+      Gratis 100g
+    </span>
+  </header>
+
+  <!-- Banner Info -->
+  <div class="p-4">
+    <div class="bg-gradient-to-r from-coffeeDark to-coffee rounded-2xl p-5 text-white shadow-lg relative overflow-hidden">
+      <div class="relative z-10">
+        <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-medium">Khusus Coffee Shop & Roastery</span>
+        <h2 class="text-xl font-bold mt-2">Uji Rasa Langsung di Bar Anda</h2>
+        <p class="text-xs text-cream/90 mt-1 leading-relaxed">
+          Dapatkan paket sampel 100 gram gratis lengkap dengan lembar cupping sheet resmi sebelum melakukan pemesanan grosir berkala.
+        </p>
+      </div>
+      <div class="absolute -right-4 -bottom-6 text-7xl opacity-20">📦</div>
+    </div>
+  </div>
+
+  <!-- Form Pengajuan -->
+  <section class="px-4 space-y-4">
+    <div class="bg-white rounded-2xl shadow p-5">
+      <h3 class="font-semibold text-coffee mb-4 text-base flex items-center gap-2">
+        <span>📋</span> Formulir Pengajuan Sampel
+      </h3>
+
+      <form id="sampleKitForm" class="space-y-4">
+
+        <!-- Informasi Kedai -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Coffee Shop / Roastery *</label>
+          <input 
+            type="text" 
+            required 
+            placeholder="Contoh: Titik Temu Coffee / Ruang Seduh" 
+            class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee"
+          />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">Nama PIC / Head Barista *</label>
+            <input 
+              type="text" 
+              required 
+              placeholder="Nama Anda" 
+              class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-600 mb-1">No. WhatsApp Bisnis *</label>
+            <input 
+              type="tel" 
+              required 
+              placeholder="0812xxxxxxx" 
+              class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Alamat Bar / Kedai Pengiriman *</label>
+          <textarea 
+            rows="2" 
+            required 
+            placeholder="Alamat lengkap coffee shop untuk pengiriman paket sampel"
+            class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee"
+          ></textarea>
+        </div>
+
+        <hr class="border-gray-100 my-2"/>
+
+        <!-- Pilihan Varietas Sampel -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-2">Pilih Varietas Kopi yang Ingin Diuji *</label>
+          <select 
+            id="sampleOrigin" 
+            required 
+            class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee"
+          >
+            <option value="">Pilih varietas komoditas</option>
+            <option value="Arabica Gayo">Arabica Gayo (Aceh) - Washed 84.75 pts</option>
+            <option value="Arabica Kintamani">Arabica Kintamani (Bali) - Natural 84.00 pts</option>
+            <option value="Robusta Temanggung">Robusta Temanggung - Honey Process</option>
+            <option value="Robusta Dampit">Robusta Dampit (Malang) - Full Washed</option>
+            <option value="Arabica Toraja">Arabica Toraja - Semi Washed 85.00 pts</option>
+          </select>
+        </div>
+
+        <!-- Format Sampel -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-2">Format Sampel *</label>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <label class="flex items-center gap-2 border rounded-lg p-2.5 cursor-pointer hover:bg-gray-50">
+              <input type="radio" name="beanType" value="green" checked class="accent-coffee"/>
+              <span>🌱 Green Beans</span>
+            </label>
+            <label class="flex items-center gap-2 border rounded-lg p-2.5 cursor-pointer hover:bg-gray-50">
+              <input type="radio" name="beanType" value="roasted" class="accent-coffee"/>
+              <span>🔥 Roasted Beans</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Profil Sangrai (Jika Roasted) -->
+        <div id="roastProfileField">
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Profil Sangrai yang Diinginkan</label>
+          <select class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee">
+            <option value="medium">Medium Roast (Rekomendasi Espresso / Filter)</option>
+            <option value="light">Light-Medium (Filter / Manual Brew)</option>
+            <option value="dark">Medium-Dark (House Blend Espresso Bold)</option>
+          </select>
+        </div>
+
+        <!-- Akun Medsos / Bukti Bisnis -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Akun Instagram Kedai / Tautan Google Maps *</label>
+          <input 
+            type="text" 
+            required 
+            placeholder="@nama.coffeeshop" 
+            class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee"
+          />
+          <p class="text-[11px] text-gray-400 mt-1">Digunakan tim Sales B2B KopiHub untuk verifikasi kelayakan sampel gratis.</p>
+        </div>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="w-full bg-coffee text-white py-3 rounded-xl font-semibold hover:bg-coffeeDark transition text-sm shadow-md mt-4"
+        >
+          Klaim Free Sample Kit (100g)
+        </button>
+      </form>
+    </div>
+
+    <!-- Info Keuntungan -->
+    <div class="bg-white rounded-2xl shadow p-4 space-y-2 text-xs text-gray-600">
+      <div class="flex items-start gap-2">
+        <span class="text-coffee font-bold text-sm">✓</span>
+        <span>Paket dikirim langsung dari transit fulfillment hub KopiHub (SLA kirim 1x24 jam).</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="text-coffee font-bold text-sm">✓</span>
+        <span>Disertai sertifikat resmi <strong>Cupping Sheet Q-Grader</strong> dan data kelembaban fisik.</span>
+      </div>
+      <div class="flex items-start gap-2">
+        <span class="text-coffee font-bold text-sm">✓</span>
+        <span>Kemasan bersegel valve aluminium foil standar industri.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Nav -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t">
+    <div class="flex justify-around py-2 text-xs text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='home.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

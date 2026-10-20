@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Lembar Uji Mutu & Traceability</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA',
+            olive: '#6b7b4d'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-cream pb-24">
+
+  <!-- Header -->
+  <header class="bg-white border-b sticky top-0 z-30 px-4 py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2">
+      <button onclick="window.history.back()" class="text-gray-600 text-lg">←</button>
+      <h1 class="font-bold text-coffee text-lg">Quality & Traceability</h1>
+    </div>
+    <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
+      <span>✓</span> Terverifikasi Q-Grader
+    </span>
+  </header>
+
+  <!-- Certificate Hero -->
+  <div class="p-4">
+    <div class="bg-white rounded-2xl shadow-lg border-2 border-coffee/20 p-5 relative overflow-hidden">
+      <!-- Watermark Stamp -->
+      <div class="absolute -right-6 -bottom-6 border-4 border-emerald-500/20 text-emerald-600 font-black rounded-full w-32 h-32 flex items-center justify-center transform -rotate-12 text-xs tracking-widest uppercase pointer-events-none">
+        KopiHub QC Pass
+      </div>
+
+      <div class="flex items-center justify-between border-b pb-3 mb-3">
+        <div>
+          <span class="text-[10px] tracking-wider uppercase text-gray-400 font-semibold">Batch Quality Certificate</span>
+          <h2 class="text-lg font-bold text-coffee">Arabica Gayo Special Lot</h2>
+          <p class="text-xs text-gray-500">ID Batch: #KH-2026-GAYO-B04</p>
+        </div>
+        <div class="text-right">
+          <span class="text-xs text-gray-500">SCA Score</span>
+          <div class="text-2xl font-black text-coffee">84.75</div>
+          <span class="text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded font-semibold">Specialty Grade</span>
+        </div>
+      </div>
+
+      <!-- Cupping Breakdown Grid -->
+      <div class="space-y-2 mb-4">
+        <h4 class="text-xs font-bold text-gray-700 uppercase tracking-wide">Lembar Kurasi Rasa (Cupping Sheet)</h4>
+        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+          <div class="bg-cream/70 rounded-lg p-2 border border-coffee/10">
+            <span class="text-gray-500 text-[10px]">Fragrance/Aroma</span>
+            <p class="font-bold text-coffee">8.50</p>
+          </div>
+          <div class="bg-cream/70 rounded-lg p-2 border border-coffee/10">
+            <span class="text-gray-500 text-[10px]">Flavor</span>
+            <p class="font-bold text-coffee">8.75</p>
+          </div>
+          <div class="bg-cream/70 rounded-lg p-2 border border-coffee/10">
+            <span class="text-gray-500 text-[10px]">Aftertaste</span>
+            <p class="font-bold text-coffee">8.25</p>
+          </div>
+          <div class="bg-cream/70 rounded-lg p-2 border border-coffee/10">
+            <span class="text-gray-500 text-[10px]">Acidity</span>
+            <p class="font-bold text-coffee">8.50</p>
+          </div>
+          <div class="bg-cream/70 rounded-lg p-2 border border-coffee/10">
+            <span class="text-gray-500 text-[10px]">Body</span>
+            <p class="font-bold text-coffee">8.25</p>
+          </div>
+          <div class="bg-cream/70 rounded-lg p-2 border border-coffee/10">
+            <span class="text-gray-500 text-[10px]">Clean Cup</span>
+            <p class="font-bold text-coffee">10.00</p>
+          </div>
+        </div>
+        <p class="text-[11px] text-gray-500 italic mt-1">
+          <strong>Cupping Notes:</strong> Dark Chocolate, Dried Plum, Blackcurrant, Jasmine Floral with Silky Body.
+        </p>
+      </div>
+
+      <!-- Uji Fisik (SOP QC KopiHub) -->
+      <div class="border-t pt-3 space-y-2">
+        <h4 class="text-xs font-bold text-gray-700 uppercase tracking-wide">Hasil Uji Laboratorium Fisik</h4>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div class="flex justify-between p-2 bg-gray-50 rounded-lg">
+            <span class="text-gray-500">Kadar Air (Moisture):</span>
+            <span class="font-semibold text-emerald-700">11.2% (Lolos &lt;12%)</span>
+          </div>
+          <div class="flex justify-between p-2 bg-gray-50 rounded-lg">
+            <span class="text-gray-500">Defect Value:</span>
+            <span class="font-semibold text-emerald-700">3 (Grade 1 SNI)</span>
+          </div>
+          <div class="flex justify-between p-2 bg-gray-50 rounded-lg">
+            <span class="text-gray-500">Densitas Biji:</span>
+            <span class="font-semibold text-gray-700">0.72 g/ml</span>
+          </div>
+          <div class="flex justify-between p-2 bg-gray-50 rounded-lg">
+            <span class="text-gray-500">Screen Size:</span>
+            <span class="font-semibold text-gray-700">16–18 (Large)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Traceability Origin -->
+      <div class="border-t pt-3 mt-3 space-y-2">
+        <h4 class="text-xs font-bold text-gray-700 uppercase tracking-wide">Transparansi Rantai Pasok (Traceability)</h4>
+        <div class="space-y-1.5 text-xs text-gray-600">
+          <div class="flex items-center gap-2">
+            <span class="text-olive">📍</span>
+            <span class="text-gray-500">Lokasi Kebun:</span>
+            <span class="ml-auto font-medium text-gray-800">Takengon, Aceh Tengah</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-olive">⛰️</span>
+            <span class="text-gray-500">Ketinggian Tanam:</span>
+            <span class="ml-auto font-medium text-gray-800">1.450 – 1.600 mdpl</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-olive">🌿</span>
+            <span class="text-gray-500">Varietas:</span>
+            <span class="ml-auto font-medium text-gray-800">Ateng Super & Tim-Tim</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-olive">⚙️</span>
+            <span class="text-gray-500">Metode Pasca Panen:</span>
+            <span class="ml-auto font-medium text-gray-800">Full Washed (Fermentasi 36 Jam)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-olive">👨‍🌾</span>
+            <span class="text-gray-500">Kelompok Tani Mitra:</span>
+            <span class="ml-auto font-medium text-gray-800">Koperasi Petani Gayo Berkah</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer QC Officer -->
+      <div class="border-t pt-3 mt-3 flex items-center justify-between text-[11px] text-gray-500">
+        <div>
+          <p class="font-semibold text-gray-700">Licensed Q-Grader:</p>
+          <p>Budi Darmawan (Q-Arabica #5192)</p>
+        </div>
+        <button 
+          onclick="alert('Mengunduh dokumen sertifikat QC resmi (PDF simulasi)...')" 
+          class="border border-coffee text-coffee hover:bg-coffee hover:text-white transition px-3 py-1.5 rounded-lg font-semibold"
+        >
+          📄 Unduh PDF
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t">
+    <div class="flex justify-around py-2 text-xs text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='home.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

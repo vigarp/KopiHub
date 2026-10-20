@@ -91,20 +91,63 @@
       </p>
     </div>
 
-    <!-- Metode Pembayaran -->
+    <!-- Ekspedisi Logistik B2B -->
     <div class="bg-white rounded-xl shadow p-4">
-      <h2 class="font-semibold text-coffee mb-3">
-        Metode Pembayaran
+      <h2 class="font-semibold text-coffee mb-2 text-sm flex items-center gap-1.5">
+        <span>🚚</span> Opsi Pengiriman Logistik
+      </h2>
+      <div class="space-y-2 text-xs">
+        <label class="flex items-center justify-between border-2 border-coffee bg-coffee/5 rounded-lg p-3 cursor-pointer">
+          <div class="flex items-center gap-2">
+            <input type="radio" name="shipping" checked class="accent-coffee"/>
+            <div>
+              <p class="font-bold text-gray-800">JTR Ekspedisi Kargo Truk (Darat)</p>
+              <p class="text-gray-500 text-[11px]">SLA 1x24 jam dari Transit Hub KopiHub</p>
+            </div>
+          </div>
+          <span class="font-bold text-coffee">Rp 20.000</span>
+        </label>
+        <label class="flex items-center justify-between border rounded-lg p-3 cursor-pointer hover:bg-gray-50">
+          <div class="flex items-center gap-2">
+            <input type="radio" name="shipping" class="accent-coffee"/>
+            <div>
+              <p class="font-medium text-gray-800">Sentral Cargo Udara (Express)</p>
+              <p class="text-gray-400 text-[11px]">Estimasi Tiba Besok Pagi</p>
+            </div>
+          </div>
+          <span class="text-gray-600">Rp 45.000</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Metode Pembayaran B2B -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <h2 class="font-semibold text-coffee mb-2 text-sm flex items-center gap-1.5">
+        <span>💳</span> Metode Pembayaran B2B
       </h2>
 
-      <label class="flex items-center gap-3 border rounded-lg p-3 mb-2 cursor-pointer">
-        <input type="radio" name="payment" checked />
-        <span>📱 QRIS</span>
+      <label class="flex items-center gap-3 border rounded-lg p-3 mb-2 cursor-pointer hover:bg-gray-50 text-xs">
+        <input type="radio" name="payment" checked class="accent-coffee" />
+        <div>
+          <span class="font-semibold text-gray-800">📱 QRIS Bisnis</span>
+          <p class="text-[10px] text-gray-500">Konfirmasi instan otomatis</p>
+        </div>
       </label>
 
-      <label class="flex items-center gap-3 border rounded-lg p-3 cursor-pointer">
-        <input type="radio" name="payment" />
-        <span>🏦 Virtual Account</span>
+      <label class="flex items-center gap-3 border rounded-lg p-3 mb-2 cursor-pointer hover:bg-gray-50 text-xs">
+        <input type="radio" name="payment" class="accent-coffee" />
+        <div>
+          <span class="font-semibold text-gray-800">🏦 Transfer Virtual Account B2B</span>
+          <p class="text-[10px] text-gray-500">BCA, Mandiri, BNI, BRI</p>
+        </div>
+      </label>
+
+      <label class="flex items-center gap-3 border-2 border-emerald-500 bg-emerald-50/50 rounded-lg p-3 cursor-pointer text-xs">
+        <input type="radio" name="payment" class="accent-coffee" />
+        <div>
+          <span class="font-bold text-emerald-800">📑 Termin 14 Hari (B2B Credit Terms)</span>
+          <p class="text-[10px] text-emerald-600">Faktur komersial tempo 14 hari khusus mitra terverifikasi</p>
+        </div>
       </label>
     </div>
 
@@ -151,7 +194,7 @@
         🤍
         <span>Wishlist</span>
       </div>
-      <div class="flex flex-col items-center text-coffee font-semibold">
+      <div class="flex flex-col items-center text-coffee font-semibold cursor-pointer" onclick="window.location.href='tracking.html'">
         📦
         <span>Orders</span>
       </div>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Custom Roasting & House Blend</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA',
+            olive: '#6b7b4d'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-cream pb-24">
+
+  <!-- Header -->
+  <header class="bg-white border-b sticky top-0 z-30 px-4 py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2">
+      <button onclick="window.location.href='home.html'" class="text-gray-600 text-lg">←</button>
+      <h1 class="font-bold text-coffee text-lg">Custom Roasting</h1>
+    </div>
+    <span class="text-xs bg-amber-100 text-amber-800 font-semibold px-2.5 py-1 rounded-full">
+      Roastery Partner
+    </span>
+  </header>
+
+  <!-- Banner -->
+  <div class="p-4">
+    <div class="bg-gradient-to-r from-coffee to-amber-900 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden">
+      <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-medium">B2B House Blend Formulator</span>
+      <h2 class="text-xl font-bold mt-2">Racik Cita Rasa Khas Kedai Anda</h2>
+      <p class="text-xs text-cream/90 mt-1 leading-relaxed">
+        Kolaborasi bersama roastery partner terverifikasi untuk menciptakan signature blend eksklusif dengan profil sangrai yang konsisten setiap batch.
+      </p>
+    </div>
+  </div>
+
+  <!-- Formulator Section -->
+  <section class="px-4 space-y-4">
+    <div class="bg-white rounded-2xl shadow p-5">
+      <h3 class="font-semibold text-coffee mb-4 text-base flex items-center gap-2">
+        <span>⚙️</span> Formulasi House Blend
+      </h3>
+
+      <div class="space-y-4">
+
+        <!-- Nama Blend Kedai -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Signature Blend Kedai Anda *</label>
+          <input 
+            type="text" 
+            placeholder="Contoh: Senja Espresso Blend / Monokrom House Blend" 
+            value="Morning Glory Espresso Blend"
+            class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee"
+          />
+        </div>
+
+        <!-- Komponen 1: Arabica -->
+        <div class="border rounded-xl p-3 bg-gray-50/60">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-gray-700">Komponen Utama (Arabica)</span>
+            <span id="arabicaRatio" class="text-xs font-bold text-coffee">70%</span>
+          </div>
+          <select class="w-full px-3 py-1.5 border rounded-lg text-sm bg-white mb-2">
+            <option>Arabica Gayo (Aceh) - Notes: Cokelat, Fruity, Floral</option>
+            <option>Arabica Kintamani (Bali) - Notes: Citrus, Orange, Sweet</option>
+            <option>Arabica Toraja - Notes: Herbal, Spicy, Caramel</option>
+          </select>
+          <input 
+            type="range" 
+            min="0" 
+            max="100" 
+            value="70" 
+            id="blendSlider"
+            class="w-full accent-coffee cursor-pointer"
+          />
+        </div>
+
+        <!-- Komponen 2: Robusta (Body & Crema) -->
+        <div class="border rounded-xl p-3 bg-gray-50/60">
+          <div class="flex justify-between items-center mb-1">
+            <span class="text-xs font-semibold text-gray-700">Komponen Body & Crema (Robusta)</span>
+            <span id="robustaRatio" class="text-xs font-bold text-coffee">30%</span>
+          </div>
+          <select class="w-full px-3 py-1.5 border rounded-lg text-sm bg-white">
+            <option>Robusta Dampit Malang - Full Body, Dark Chocolate, Nutty</option>
+            <option>Robusta Temanggung - Sweet Earthy, Brown Sugar</option>
+          </select>
+        </div>
+
+        <hr class="border-gray-100 my-2"/>
+
+        <!-- Profil Sangrai (Roast Level) -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-2">Pilih Profil Sangrai (Roast Level) *</label>
+          <div class="grid grid-cols-3 gap-2 text-center text-xs">
+            <label class="border-2 border-coffee bg-coffee/10 rounded-xl p-2.5 cursor-pointer block text-coffee font-semibold">
+              <input type="radio" name="roastLevel" value="medium" checked class="hidden"/>
+              <div class="text-lg mb-1">🤎</div>
+              <span>Medium</span>
+              <p class="text-[10px] text-gray-500 font-normal mt-0.5">Sweet & Acid</p>
+            </label>
+            <label class="border rounded-xl p-2.5 cursor-pointer block text-gray-600 font-medium hover:border-coffee">
+              <input type="radio" name="roastLevel" value="medium-dark" class="hidden"/>
+              <div class="text-lg mb-1">☕</div>
+              <span>Medium-Dark</span>
+              <p class="text-[10px] text-gray-400 font-normal mt-0.5">Espresso Bold</p>
+            </label>
+            <label class="border rounded-xl p-2.5 cursor-pointer block text-gray-600 font-medium hover:border-coffee">
+              <input type="radio" name="roastLevel" value="dark" class="hidden"/>
+              <div class="text-lg mb-1">🟤</div>
+              <span>Dark Roast</span>
+              <p class="text-[10px] text-gray-400 font-normal mt-0.5">Low Acidity</p>
+            </label>
+          </div>
+        </div>
+
+        <!-- Format Gilingan -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Bentuk Kopi Saat Dikirim</label>
+          <select class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee">
+            <option>Whole Beans (Biji Utuh - Rekomendasi Barista)</option>
+            <option>Fine Grind (Giling Halus - Mesin Espresso Komersial)</option>
+            <option>Medium Grind (Giling Sedang - Drip / Mokapot)</option>
+          </select>
+        </div>
+
+        <!-- Kemasan Khusus -->
+        <div class="bg-cream/50 rounded-xl p-3 border text-xs text-gray-600 space-y-1">
+          <p class="font-semibold text-coffee">📦 Spesifikasi Kemasan B2B:</p>
+          <p>• Pouch Food Grade 1 kg dengan <em>One-Way Degassing Valve</em>.</p>
+          <p>• Dilengkapi stiker label nama blend & logo kedai kopi Anda.</p>
+          <p>• Minimum pemesanan batch sangrai: <strong>10 kg</strong>.</p>
+        </div>
+
+        <!-- Estimasi Harga Custom -->
+        <div class="flex justify-between items-center pt-2">
+          <div>
+            <p class="text-xs text-gray-500">Estimasi Biaya Racikan:</p>
+            <p class="text-base font-bold text-coffee">Rp 115.000 <span class="text-xs font-normal">/ kg</span></p>
+          </div>
+          <button
+            type="button"
+            onclick="saveCustomBlend()"
+            class="bg-coffee text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-coffeeDark transition text-sm shadow-md"
+          >
+            Pesan Racikan Ini
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Nav -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t">
+    <div class="flex justify-around py-2 text-xs text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='home.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

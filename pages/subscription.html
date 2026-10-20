@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>" />
+  <title>KopiHub | Routine Subscription</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: '#6F4E37',
+            coffeeDark: '#5a3d2b',
+            cream: '#F5EFEA',
+            olive: '#6b7b4d'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-cream pb-24">
+
+  <!-- Header -->
+  <header class="bg-white border-b sticky top-0 z-30 px-4 py-3 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2">
+      <button onclick="window.location.href='home.html'" class="text-gray-600 text-lg">←</button>
+      <h1 class="font-bold text-coffee text-lg">KopiHub Routine</h1>
+    </div>
+    <span class="text-xs bg-amber-100 text-amber-800 font-semibold px-2.5 py-1 rounded-full">
+      Hemat 15%
+    </span>
+  </header>
+
+  <!-- Banner -->
+  <div class="p-4">
+    <div class="bg-coffee rounded-2xl p-5 text-white shadow-lg relative overflow-hidden">
+      <span class="bg-white/20 text-xs px-2.5 py-1 rounded-full font-medium">B2B Scheduled Supply</span>
+      <h2 class="text-xl font-bold mt-2">Pasokan Biji Kopi Tanpa Putus</h2>
+      <p class="text-xs text-cream/90 mt-1 leading-relaxed">
+        Jadwalkan pengiriman biji kopi berkala mingguan atau bulanan. Bebas biaya kargo dan alokasi stok terjamin di gudang sentral transit KopiHub.
+      </p>
+    </div>
+  </div>
+
+  <!-- Configurator Routine -->
+  <section class="px-4 space-y-4">
+    <div class="bg-white rounded-2xl shadow p-5">
+      <h3 class="font-semibold text-coffee mb-4 text-base flex items-center gap-2">
+        <span>🔄</span> Atur Jadwal Pasokan Kedai
+      </h3>
+
+      <form id="routineForm" class="space-y-4">
+
+        <!-- Pilihan Produk -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Pilih Produk Kopi</label>
+          <select id="subProduct" class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee">
+            <option value="120000" data-name="Arabica Gayo (Single Origin)">Arabica Gayo (Rp 120.000/kg)</option>
+            <option value="130000" data-name="Arabica Kintamani">Arabica Kintamani (Rp 130.000/kg)</option>
+            <option value="90000" data-name="Robusta Dampit Malang">Robusta Dampit Malang (Rp 90.000/kg)</option>
+            <option value="110000" data-name="Commercial House Blend Espresso" selected>Commercial House Blend Espresso (Rp 110.000/kg)</option>
+          </select>
+        </div>
+
+        <!-- Volume per Pengiriman -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Kuantitas Pasokan per Pengiriman</label>
+          <div class="grid grid-cols-3 gap-2 text-center text-sm">
+            <button type="button" class="sub-qty-btn border-2 border-coffee bg-coffee/10 text-coffee font-semibold py-2 rounded-xl" data-qty="10">10 kg</button>
+            <button type="button" class="sub-qty-btn border py-2 rounded-xl text-gray-600 font-medium hover:border-coffee" data-qty="20">20 kg</button>
+            <button type="button" class="sub-qty-btn border py-2 rounded-xl text-gray-600 font-medium hover:border-coffee" data-qty="50">50 kg</button>
+          </div>
+          <p class="text-[11px] text-gray-400 mt-1">Minimum order langganan: 10 kg / periode pengiriman.</p>
+        </div>
+
+        <!-- Frekuensi Pengiriman -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Frekuensi Jadwal Pengiriman</label>
+          <div class="space-y-2 text-sm">
+            <label class="flex items-center justify-between border rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="freq" value="weekly" checked class="accent-coffee"/>
+                <span class="font-medium">Tiap 1 Minggu Sekali</span>
+              </div>
+              <span class="text-xs text-coffee font-semibold">Rekomendasi Kafe Ramai</span>
+            </label>
+            <label class="flex items-center justify-between border rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="freq" value="biweekly" class="accent-coffee"/>
+                <span class="font-medium">Tiap 2 Minggu Sekali</span>
+              </div>
+              <span class="text-xs text-gray-400">Paling Populer</span>
+            </label>
+            <label class="flex items-center justify-between border rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="freq" value="monthly" class="accent-coffee"/>
+                <span class="font-medium">Tiap 1 Bulan Sekali</span>
+              </div>
+              <span class="text-xs text-gray-400">Grosir Karungan</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Hari Pengiriman -->
+        <div>
+          <label class="block text-xs font-semibold text-gray-600 mb-1">Hari Dispatch Pengiriman Kargo</label>
+          <select class="w-full px-3 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-coffee">
+            <option>Setiap Hari Senin (Tiba Rabu)</option>
+            <option>Setiap Hari Rabu (Tiba Jumat)</option>
+            <option>Setiap Hari Jumat (Tiba Senin Depan)</option>
+          </select>
+        </div>
+
+        <!-- Rincian Biaya Langganan -->
+        <div class="bg-cream/60 rounded-xl p-4 space-y-2 text-sm border border-coffee/20 mt-3">
+          <div class="flex justify-between text-gray-600">
+            <span>Harga Reguler:</span>
+            <span id="subRegular">Rp 1.100.000</span>
+          </div>
+          <div class="flex justify-between text-green-700 font-medium">
+            <span>Diskon KopiHub Routine (15%):</span>
+            <span id="subDiscount">- Rp 165.000</span>
+          </div>
+          <div class="flex justify-between text-gray-600">
+            <span>Ongkir Kargo Terjadwal:</span>
+            <span class="text-green-700 font-semibold">GRATIS (Free Cargo)</span>
+          </div>
+          <div class="flex justify-between font-bold text-coffee text-base pt-2 border-t border-coffee/20">
+            <span>Biaya per Pengiriman:</span>
+            <span id="subTotal">Rp 935.000</span>
+          </div>
+        </div>
+
+        <!-- Tombol Aktifkan -->
+        <button
+          type="button"
+          onclick="activateSubscription()"
+          class="w-full bg-coffee text-white py-3 rounded-xl font-semibold hover:bg-coffeeDark transition text-sm shadow-md mt-4"
+        >
+          Mulai Berlangganan Routine
+        </button>
+      </form>
+    </div>
+
+    <!-- Garansi & SLA -->
+    <div class="bg-white rounded-2xl shadow p-4 text-xs text-gray-600 space-y-2">
+      <div class="font-semibold text-coffee text-sm mb-1">Jaminan KopiHub Routine B2B:</div>
+      <p>🛡️ <strong>Alokasi Stok Fisik Terjaga:</strong> Kopi Anda diamankan di climate-controlled storage gudang KopiHub.</p>
+      <p>🔄 <strong>Jeda / Berhenti Kapan Saja:</strong> Fleksibel diatur tanpa penalti jika kedai sedang renovasi/tutup.</p>
+      <p>📄 <strong>Invoicing Terintegrasi:</strong> Faktur komersial otomatis diterbitkan pada setiap batch pengiriman.</p>
+    </div>
+  </section>
+
+  <!-- Bottom Nav -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t">
+    <div class="flex justify-around py-2 text-xs text-gray-500">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='home.html'">
+        🏠
+        <span>Home</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='wishlist.html'">
+        🤍
+        <span>Wishlist</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+        📦
+        <span>Orders</span>
+      </div>
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='profile.html'">
+        👤
+        <span>Profile</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- JS -->
+  <script src="../assets/js/scripts.js"></script>
+
+</body>
+</html>

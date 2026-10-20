@@ -118,6 +118,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Home filter & search handler (pages/home.html)
   initHomeFilter();
+
+  // B2B Sample Kit Form
+  const sampleKitForm = document.getElementById('sampleKitForm');
+  if (sampleKitForm) {
+    sampleKitForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const origin = document.getElementById('sampleOrigin')?.value || 'Sampel';
+      alert('Pengajuan Free Sample Kit (' + origin + ' 100g) berhasil diajukan (simulasi)! Tim Sales B2B KopiHub akan segera menghubungi WhatsApp Anda untuk konfirmasi pengiriman.');
+      window.location.href = 'tracking.html';
+    });
+  }
+
+  // B2B Routine Subscription Setup
+  initSubscription();
+
+  // B2B Custom Roast Setup
+  initCustomRoast();
 });
 
 // Category and Search Filtering on home.html
@@ -214,4 +231,68 @@ function initHomeFilter() {
   // Run on initial page load
   updateButtonStyles();
   applyFilter();
+}
+
+// B2B Subscription Page Logic (subscription.html)
+let selectedSubQty = 10;
+function initSubscription() {
+  const subQtyBtns = document.querySelectorAll('.sub-qty-btn');
+  const subProduct = document.getElementById('subProduct');
+  if (!subProduct) return;
+
+  function recalculateSub() {
+    const unitPrice = parseInt(subProduct.value) || 110000;
+    const regularTotal = unitPrice * selectedSubQty;
+    const discount = Math.round(regularTotal * 0.15); // 15% discount for routine
+    const finalTotal = regularTotal - discount;
+
+    const subRegular = document.getElementById('subRegular');
+    const subDiscount = document.getElementById('subDiscount');
+    const subTotal = document.getElementById('subTotal');
+
+    if (subRegular) subRegular.innerText = 'Rp ' + regularTotal.toLocaleString('id-ID');
+    if (subDiscount) subDiscount.innerText = '- Rp ' + discount.toLocaleString('id-ID');
+    if (subTotal) subTotal.innerText = 'Rp ' + finalTotal.toLocaleString('id-ID');
+  }
+
+  subQtyBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      subQtyBtns.forEach(b => {
+        b.classList.remove('border-2', 'border-coffee', 'bg-coffee/10', 'text-coffee', 'font-semibold');
+        b.classList.add('border', 'text-gray-600', 'font-medium');
+      });
+      this.classList.add('border-2', 'border-coffee', 'bg-coffee/10', 'text-coffee', 'font-semibold');
+      this.classList.remove('border', 'text-gray-600', 'font-medium');
+      selectedSubQty = parseInt(this.getAttribute('data-qty')) || 10;
+      recalculateSub();
+    });
+  });
+
+  subProduct.addEventListener('change', recalculateSub);
+  recalculateSub();
+}
+
+function activateSubscription() {
+  alert('Program langganan KopiHub Routine berhasil diaktifkan (simulasi)! Jadwal pengiriman pertama telah dijadwalkan dari Transit Hub.');
+  window.location.href = 'tracking.html';
+}
+
+// B2B Custom Roast Blend Logic (custom-roast.html)
+function initCustomRoast() {
+  const blendSlider = document.getElementById('blendSlider');
+  const arabicaRatio = document.getElementById('arabicaRatio');
+  const robustaRatio = document.getElementById('robustaRatio');
+
+  if (blendSlider && arabicaRatio && robustaRatio) {
+    blendSlider.addEventListener('input', function() {
+      const val = parseInt(this.value);
+      arabicaRatio.innerText = val + '%';
+      robustaRatio.innerText = (100 - val) + '%';
+    });
+  }
+}
+
+function saveCustomBlend() {
+  alert('Racikan Signature House Blend Anda berhasil disimpan ke profil kedai! Mengalihkan ke halaman pemesanan...');
+  window.location.href = 'order.html';
 }

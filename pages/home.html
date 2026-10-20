@@ -28,12 +28,56 @@
 <body class="bg-cream min-h-screen pb-20">
 
   <!-- Header -->
-  <header class="text-center pt-6 pb-4">
+  <header class="text-center pt-6 pb-2">
+    <div class="inline-block px-3 py-1 bg-coffee/10 text-coffee rounded-full text-xs font-semibold mb-1">
+      B2B Coffee Marketplace & Supply Chain
+    </div>
     <h1 class="text-2xl font-bold text-coffee">KopiHub</h1>
-    <p class="text-sm text-gray-600 mt-1">
-      Halo, selamat datang di KopiHub!
+    <p class="text-xs text-gray-500 mt-0.5">
+      Solusi Rantai Pasok Kopi untuk Coffee Shop & Roastery
     </p>
   </header>
+
+  <!-- B2B Quick Services Banner -->
+  <div class="px-4 py-2">
+    <div class="grid grid-cols-3 gap-2">
+      <!-- Service 1: Free Sample Kit -->
+      <div 
+        onclick="window.location.href='sample-kit.html'" 
+        class="bg-gradient-to-br from-coffee to-coffeeDark text-white p-3 rounded-xl shadow cursor-pointer hover:opacity-95 transition flex flex-col justify-between"
+      >
+        <span class="text-lg">📦</span>
+        <div>
+          <p class="text-[11px] font-bold leading-tight">Free Sample</p>
+          <p class="text-[9px] text-cream/80">Klaim 100g</p>
+        </div>
+      </div>
+
+      <!-- Service 2: KopiHub Routine -->
+      <div 
+        onclick="window.location.href='subscription.html'" 
+        class="bg-white border-2 border-coffee/20 text-coffee p-3 rounded-xl shadow-sm cursor-pointer hover:bg-cream/40 transition flex flex-col justify-between"
+      >
+        <span class="text-lg">🔄</span>
+        <div>
+          <p class="text-[11px] font-bold leading-tight">Routine</p>
+          <p class="text-[9px] text-gray-500">Pasokan Rutin</p>
+        </div>
+      </div>
+
+      <!-- Service 3: Custom Roast -->
+      <div 
+        onclick="window.location.href='custom-roast.html'" 
+        class="bg-white border-2 border-coffee/20 text-coffee p-3 rounded-xl shadow-sm cursor-pointer hover:bg-cream/40 transition flex flex-col justify-between"
+      >
+        <span class="text-lg">⚙️</span>
+        <div>
+          <p class="text-[11px] font-bold leading-tight">Custom Roast</p>
+          <p class="text-[9px] text-gray-500">House Blend</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Search -->
   <div class="px-4 mb-4">
@@ -252,7 +296,7 @@
         🤍
         <span>Wishlist</span>
       </div>
-      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='order.html'">
+      <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='tracking.html'">
         📦
         <span>Orders</span>
       </div>
